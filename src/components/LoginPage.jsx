@@ -46,7 +46,7 @@ function LoginPage() {
           <button
               onClick={(e) => {
                   e.preventDefault()
-                      navigate("/search")
+                      navigate("/game")
               }}>
             Submit
           </button>

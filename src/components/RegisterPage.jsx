@@ -58,7 +58,7 @@ function RegisterPage() {
         onClick={(e) => {
           e.preventDefault()
           if (password === confirm) {
-            navigate("/search")
+            navigate("/game")
           }
         }}>
         Submit
