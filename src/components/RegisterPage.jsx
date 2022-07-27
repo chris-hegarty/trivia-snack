@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function RegisterPage() {
-  const [userName, setUserName] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
+  //Need to add player context.
 
   return (
     <div className="register-page">
       <div className="form-field">
         <label htmlFor="user-name">Enter A Username</label>
         <input 
-          value={userName}
+          value={username}
           onChange={(e)=>{
-            setUserName(e.target.value)
+            setUsername(e.target.value)
           }}
           type="text"
           id="user-name" 
@@ -59,7 +60,8 @@ function RegisterPage() {
           if (password === confirm) {
             navigate("/search")
           }
-        }}>Submit
+        }}>
+        Submit
       </button>
     </div>
   )
