@@ -27,7 +27,7 @@ function LoginPage() {
                   <input
                       value={password}
                       onChange={(e) => {
-                          setPassword(e.target.ariaValueText)
+                          setPassword(e.target.value)
                       }}
                       type={show === true ? "text" : "password"}
                       id="password"
@@ -47,6 +47,7 @@ function LoginPage() {
               onClick={(e) => {
                   e.preventDefault()
                       navigate("/game")
+                  console.log(e);
               }}>
             Submit
           </button>

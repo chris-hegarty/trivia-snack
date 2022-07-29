@@ -1,10 +1,10 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import {PlayerContext} from "../context/PlayerContext"
 
 function Menu() {
 
-    const{loggedInPlayer, logout} = useContext(PlayerContext)
+    const{loggedInPlayer, logout} = useContext(PlayerContext);
 
   return (
     <>
