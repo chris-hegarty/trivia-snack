@@ -1,11 +1,13 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { PlayerContext } from "../context/PlayerContext";
 
 function RegisterPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [show, setShow] = useState(false);
+  const { login } = useContext(PlayerContext)
   const navigate = useNavigate();
   //Need to add player context.
 
@@ -27,7 +29,7 @@ function RegisterPage() {
           <input 
             value={password}
             onChange={(e)=>{
-              setPassword(e.target.ariaValueText)
+              setPassword(e.target.value)
             }}
             type={show === true ? "text" : "password"}
             id="password"
@@ -57,7 +59,9 @@ function RegisterPage() {
       <button
         onClick={(e) => {
           e.preventDefault()
-          if (password === confirm) {
+          console.log(password, confirm);
+          if (confirm === password) {
+            login(username)
             navigate("/game")
           }
         }}>

@@ -1,5 +1,7 @@
-import React, {useContext, useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, {useContext, useState} from "react"
+import { useNavigate } from "react-router-dom"
+import { PlayerContext } from "../context/PlayerContext";
+
 
 function LoginPage() {
 
@@ -7,12 +9,13 @@ function LoginPage() {
   const[username, setUsername] = useState("");
   const[password, setPassword] = useState("");
   const [show, setShow] = useState(false);
+  const {login} = useContext(PlayerContext)
 
   return (
-    
+        <>
           <div className="login-page">
               <div className="form-field">
-                  <label htmlFor="user-name">Enter A Username</label>
+                  <label htmlFor="user-name">Username</label>
                   <input
                       value={username}
                       onChange={(e) => {
@@ -23,7 +26,7 @@ function LoginPage() {
                   />
               </div>
               <div className="form-field">
-                  <label htmlFor="password">Enter a Password</label>
+                  <label htmlFor="password">Password</label>
                   <input
                       value={password}
                       onChange={(e) => {
@@ -46,13 +49,14 @@ function LoginPage() {
           <button
               onClick={(e) => {
                   e.preventDefault()
+                      login(username)
                       navigate("/game")
                   console.log(e);
               }}>
             Submit
           </button>
-        
     </div>
+    </>
   )
 }
 

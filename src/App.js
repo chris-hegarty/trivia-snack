@@ -1,9 +1,9 @@
 
-import './App.css';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 
-import ProtectedRoute from './shared/ProtectedRoute';
-import Menu from './components/Menu'
+import ProtectedRoute from "./shared/ProtectedRoute";
+import Menu from "./components/Menu"
 import RegisterPage from "./components/RegisterPage";
 import LoginPage from "./components/LoginPage";
 import GamePage from "./components/GamePage"
