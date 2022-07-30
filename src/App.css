@@ -1,23 +1,9 @@
 #wheel {
-	height: 200px;
-	width: 200px;
-	background-color: red; /* For browsers that do not support gradients */
-	background-image: conic-gradient(
-		grey 0deg,
-		grey 55deg,
-		black 56deg,
-		black 64deg,
-		yellow 65deg,
-		yellow 120deg,
-		green 120deg,
-		green 180deg,
-		blue 180deg,
-		blue 240deg,
-		black 240deg,
-		black 300deg,
-		purple 300deg,
-		purple 360deg
-	);
+	height: 300px;
+	width: 300px;
+	/* background-color: gray; */
 	border-radius: 50%;
 	border: 5px solid grey;
+
+	/* repeating-conic-gradient(from 0deg, red 0deg 30deg, yellow 30deg 60deg, blue 60deg 90deg); */
 }

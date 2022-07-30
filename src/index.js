@@ -5,12 +5,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ErrorBoundary from "./ErrorBoundary";
 import { PlayerProvider } from "./context/PlayerContext";
+import { PresetsProvider } from "./context/PresetsContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ErrorBoundary>
     <PlayerProvider>
-      <App />
+      <PresetsProvider>
+        <App />
+      </PresetsProvider>
     </PlayerProvider>
   </ErrorBoundary>
 );

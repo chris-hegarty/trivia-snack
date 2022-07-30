@@ -1,6 +1,5 @@
-import React, {useContext} from "react"
-import PresetsContext from "../context/PresetsContext"
-
+import React, { useContext } from "react"
+import { PresetsContext } from "../context/PresetsContext"
 
 export function Presets(props) {
 
