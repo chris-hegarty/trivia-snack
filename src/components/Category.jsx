@@ -1,14 +1,14 @@
 import React, {useContext, useState} from 'react'
 import { CategoryContext } from "../context/CategoryContext";
-import { UrlContext } from "../context/UrlContext";
+// import { UrlContext } from "../context/UrlContext";
 import useAxios from "../hooks/useAxios";
 
 
 function Category() {
 const {selected,setSelected} = useContext(CategoryContext)
 //trying to have only one checkbox checked at a time???
-const [url, setUrl] = useContext(UrlContext)
-const{ data:card, error } = useAxios(url)
+const [url, setUrl] = useState()
+const{ data, error } = useAxios(url)
 
   return (
     <section id="category-container flex column">
