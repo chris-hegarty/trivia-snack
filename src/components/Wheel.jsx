@@ -12,13 +12,6 @@ function Wheel() {
       { title: 'Five', value: 60, key: 5, color: "orange" },
       { title: 'Six', value: 60, key: 6, color: "purple" }
     ]
-
-  console.log(data[0].color);
-  console.log(data[1].color);
-  console.log(data[2].color);
-  console.log(data[3].color);
-  console.log(data[4].color);
-  console.log(data[5].color);
     
   return (
 

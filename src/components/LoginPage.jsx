@@ -51,7 +51,6 @@ function LoginPage() {
                   e.preventDefault()
                       login(username)
                       navigate("/game")
-                  console.log(e);
               }}>
             Submit
           </button>

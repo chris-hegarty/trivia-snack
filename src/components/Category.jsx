@@ -1,10 +1,14 @@
 import React, {useContext, useState} from 'react'
 import { CategoryContext } from "../context/CategoryContext";
+import { UrlContext } from "../context/UrlContext";
+import useAxios from "../hooks/useAxios";
+
 
 function Category() {
 const {selected,setSelected} = useContext(CategoryContext)
 //trying to have only one checkbox checked at a time???
-const [checked, setChecked] = useState()
+const [url, setUrl] = useContext(UrlContext)
+const{ data:card, error } = useAxios(url)
 
   return (
     <section id="category-container flex column">
@@ -94,6 +98,13 @@ const [checked, setChecked] = useState()
 
             />
               <label htmlFor="sport_and_leisure">Sports & Leisure</label>
+        </div>
+        <div className="input-container">
+            <button onClick={(e)=>{
+                setUrl(`&categories=${selected}`)
+            }}>
+                GET QUESTION
+            </button>
         </div>
     </section>
   )

@@ -7,6 +7,7 @@ import ErrorBoundary from "./ErrorBoundary";
 import { PlayerProvider } from "./context/PlayerContext";
 import { PresetsProvider } from "./context/PresetsContext";
 import { CategoryProvider } from "./context/CategoryContext";
+import { UrlProvider } from "./context/UrlContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +15,9 @@ root.render(
     <PlayerProvider>
       <PresetsProvider>
         <CategoryProvider>
-          <App />
+          <UrlProvider>
+            <App />
+          </UrlProvider>
         </CategoryProvider>
       </PresetsProvider>
     </PlayerProvider>
