@@ -1,6 +1,7 @@
 import React from 'react'
 import {Presets} from './Presets'
 import Wheel  from "./Wheel";
+import Category from "./Category";
 
 function GamePage() {
     return (
@@ -18,6 +19,8 @@ function GamePage() {
                 <section className="difficulty">
                     <Presets /> 
                     <Wheel />
+                    <Category />
+
                 </section>
             </main>
         </>

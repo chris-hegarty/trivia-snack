@@ -6,13 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import ErrorBoundary from "./ErrorBoundary";
 import { PlayerProvider } from "./context/PlayerContext";
 import { PresetsProvider } from "./context/PresetsContext";
+import { CategoryProvider } from "./context/CategoryContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ErrorBoundary>
     <PlayerProvider>
       <PresetsProvider>
-        <App />
+        <CategoryProvider>
+          <App />
+        </CategoryProvider>
       </PresetsProvider>
     </PlayerProvider>
   </ErrorBoundary>

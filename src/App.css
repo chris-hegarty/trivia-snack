@@ -1,9 +1,29 @@
+.flex {
+	display: flex;
+}
+.flex-wrap {
+	flex-wrap: wrap;
+}
+.center {
+	justify-content: center;
+}
+.column {
+	flex-direction: column;
+}
+.flex-grow-1 {
+	flex-grow: 1;
+}
+.basis-33 {
+	flex-basis: calc((100% / 3) - 40px);
+}
+.basis-50 {
+	flex-basis: 50%;
+}
+
 #wheel {
 	height: 300px;
 	width: 300px;
 	/* background-color: gray; */
 	border-radius: 50%;
 	border: 5px solid grey;
-
-	/* repeating-conic-gradient(from 0deg, red 0deg 30deg, yellow 30deg 60deg, blue 60deg 90deg); */
 }
