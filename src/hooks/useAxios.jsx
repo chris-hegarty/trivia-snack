@@ -8,6 +8,7 @@ const baseUrl = "https://the-trivia-api.com/api/questions/?limit=1&region=US&dif
 
 function useAxios(url) {
   // const { selected  } = useContext(CategoryContext)
+
   const[data, setData] = useState(null); 
   const [error, setError] = useState(null);
 
@@ -15,15 +16,21 @@ function useAxios(url) {
       setData(null)
       setError(null)
       async function init(){
+        if (!url) {
+          return
+        }
         try {
             const response = await axios.get(baseUrl + url);
             const card = response.data.map((val) => ({
-                question: val[0].question,
-                correct: val[0].correctAnswer,
-                incorrect: val[0].incorrectAnswers,
+              category: val.category,  
+              question: val.question,
+              id: val.id,
+              correct: val.correctAnswer,
+              incorrect: val.incorrectAnswers,
               })
             )
             setData(card)
+            console.log(card);
 
         } catch (error) {
             setError("No cards available")

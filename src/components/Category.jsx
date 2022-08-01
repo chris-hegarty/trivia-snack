@@ -8,6 +8,9 @@ const {selected, setSelected} = useContext(CategoryContext)
 const [url, setUrl] = useState(null)
 const{ data:card } = useAxios(url)
 
+
+
+
     useEffect(() => {
         if (card) {
             setSelected(card);
@@ -25,6 +28,7 @@ const{ data:card } = useAxios(url)
             type="checkbox"
             name="categories"
             id="geography"
+
 
             />
             <label htmlFor="geography">Geography</label>
@@ -105,7 +109,7 @@ const{ data:card } = useAxios(url)
         <div className="input-container">
             <button onClick={(e)=>{
                 setUrl(`&categories=${selected}`)
-                  console.log(selected);
+                  console.log(url);
             }}>
                 GET QUESTION
             </button>
