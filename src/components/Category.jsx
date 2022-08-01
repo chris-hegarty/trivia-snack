@@ -1,11 +1,13 @@
 import React, {useContext, useState, useEffect} from 'react'
 import { CategoryContext } from "../context/CategoryContext";
+import {UrlContext} from "../context/UrlContext"
+import Question from "../components/Question"
 import useAxios from "../hooks/useAxios";
 
 
 function Category() {
 const {selected, setSelected} = useContext(CategoryContext)
-const [url, setUrl] = useState(null)
+const {url, setUrl} = useContext(UrlContext)
 const{ data:card } = useAxios(url)
     useEffect(() => {
         if (card) {
@@ -36,9 +38,9 @@ const{ data:card } = useAxios(url)
        
         <div className="input-container">
             <button onClick={(e)=>{
-                e.preventDefault()
+                e.preventDefault( )
                 setUrl(`&categories=${selected}`)
-                  console.log(url);
+                return <Question />
             }}>
                 GET QUESTION
             </button>

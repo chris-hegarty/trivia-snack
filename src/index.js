@@ -5,7 +5,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ErrorBoundary from "./ErrorBoundary";
 import { PlayerProvider } from "./context/PlayerContext";
-import { PresetsProvider } from "./context/PresetsContext";
 import { CategoryProvider } from "./context/CategoryContext";
 import { UrlProvider } from "./context/UrlContext";
 

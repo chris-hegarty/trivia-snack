@@ -1,8 +1,10 @@
 import React from 'react'
 import Wheel  from "./Wheel";
 import Category from "./Category";
+import Question from "./Question";
 
 function GamePage() {
+
     return (
         <>
             <main>
@@ -17,6 +19,7 @@ function GamePage() {
                 <section className="difficulty">
                     <Wheel />
                     <Category />
+                    <Question />
                 </section>
             </main>
         </>

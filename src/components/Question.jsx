@@ -1,23 +1,35 @@
-import React from 'react'
+import React, { useContext, useState, useEffect } from 'react'
+import { CategoryContext } from "../context/CategoryContext";
+import { UrlContext } from '../context/UrlContext';
+import useAxios from "../hooks/useAxios";
+
+
 
 function Question() {
+    const {setSelected} = useContext(CategoryContext)
+    const { url } = useContext(UrlContext)
+    const {data:card} = useAxios(url)
+    console.log(card);
 
-    const optionClicked = (isCorrect)=>{
-         if(isCorrect){
-            //highlight question in green
-         } else {
-            //
-         }
-    }
+    useEffect( () => {
+        if(card) {
+            setSelected(card)
+        }
+    }, [card, setSelected])
+
   return (
     <section className="question-card">
-        <h3>Question goes here</h3>
+        {/* Not able to use card object here? */}
+        <h3>{}</h3>
         <ul>
-            <li className="choice">Choice 1</li>
-            <li className="choice">Choice 2</li>
-            <li className="choice">Choice 3</li>
-            <li className="choice">Choice 4</li>
+            <li className="choice">{}</li>
+            <li className="choice">{}</li>
+              <li className="choice">{}</li>
+              <li className="choice">{}</li>
         </ul>
+        <div>
+            <button>Submit Answer</button>
+        </div>
 
 
     </section>

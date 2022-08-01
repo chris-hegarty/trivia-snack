@@ -30,7 +30,6 @@ function useAxios(url) {
               })
             )
             setData(card)
-            console.log(card);
 
         } catch (error) {
             setError("No cards available")
