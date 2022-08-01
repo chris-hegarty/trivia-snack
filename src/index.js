@@ -13,13 +13,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ErrorBoundary>
     <PlayerProvider>
-      <PresetsProvider>
-        <CategoryProvider>
-          <UrlProvider>
-            <App />
-          </UrlProvider>
-        </CategoryProvider>
-      </PresetsProvider>
+      <CategoryProvider>
+        <UrlProvider>
+          <App />
+        </UrlProvider>
+      </CategoryProvider>
     </PlayerProvider>
   </ErrorBoundary>
 );

@@ -2,7 +2,7 @@ import React, { useState, createContext } from 'react'
 export const CategoryContext = createContext(null)
 
 export function CategoryProvider(props) {
-    const [selected, setSelected] = useState(null)
+    const [selected, setSelected] = useState("default"  )
 
     return (
         <CategoryContext.Provider value={{ selected, setSelected }}>
