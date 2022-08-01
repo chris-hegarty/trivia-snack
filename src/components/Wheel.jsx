@@ -5,12 +5,12 @@ function Wheel() {
 
   const data = 
     [
-      { title: 'One', value: 60, key: 1, color:"blue" },
-      { title: 'Two', value: 60, key: 2, color: "green" },
-      { title: 'Three', value: 60, key: 3, color: "red" },
-      { title: 'Four', value: 60, key: 4, color: "brown" },
-      { title: 'Five', value: 60, key: 5, color: "orange" },
-      { title: 'Six', value: 60, key: 6, color: "purple" }
+      { title: 'One', value: 60, key: 1, color:"#05b4e1" },
+      { title: 'Two', value: 60, key: 2, color: "#6cac06" },
+      { title: 'Three', value: 60, key: 3, color: "#fbd60a" },
+      { title: 'Four', value: 60, key: 4, color: "#8c4e09" },
+      { title: 'Five', value: 60, key: 5, color: "#d93905" },
+      { title: 'Six', value: 60, key: 6, color: "#b91274" }
     ]
     
   return (

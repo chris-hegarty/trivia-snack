@@ -16,8 +16,9 @@ const{ data:card } = useAxios(url)
     }, [card, setSelected]);
 
   return (
-    <section id="category-container flex column">
+    <section id="category-container flex">
         
+        <div>
         <label htmlFor="category-dropdown">Select a Category</label>
         <select
             value={selected}
@@ -26,6 +27,7 @@ const{ data:card } = useAxios(url)
             }}
             name="categories"
             id="category-dropdown"
+              className="px-2 py-1 mx-6 rounded"
         >
             <option value="default">-SELECT-</option>
             <option value="geography">Geography</option>
@@ -35,9 +37,12 @@ const{ data:card } = useAxios(url)
             <option value="science">Science & Nature</option>
             <option value="sport_and_leisure">Sports and Leisure</option>
         </select>
+        </div>
        
-        <div className="input-container">
-            <button onClick={(e)=>{
+        <div className="input-container px-4 py-8 flex center">
+            <button 
+                className="rounded bg-[#daa520] py-2 px-6"
+                onClick={(e)=>{
                 e.preventDefault( )
                 setUrl(`&categories=${selected}`)
                 return <Question />
@@ -45,6 +50,9 @@ const{ data:card } = useAxios(url)
                 GET QUESTION
             </button>
         </div>
+          <section className="card-main">
+              <Question />
+          </section>
     </section>
   )
 }

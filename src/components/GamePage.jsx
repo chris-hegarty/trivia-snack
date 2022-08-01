@@ -7,19 +7,20 @@ function GamePage() {
 
     return (
         <>
-            <main>
-                <section className="intro">
-                    <h1>Welcome to Trivia Wheel!</h1>
+            <main className="navy">
+                <section className="intro flex center align-center column">
+                    <h1 className="gold">Trivia Time</h1>
                     <h2>A quiz game inspired by Trivial Pursuit.</h2>
-                    <p>First, select a region and a level of difficulty.</p>
-                    <p>Next, select a category, then a question.</p>
-                    <p>When select a correct answer, the category "pie" will be added to the wheel.</p>
+                    <br />
+                    <div className="flex column align-center instructions">
+                    <p>Select a category, and click to generate a question.</p>
+                    <p>When you've selected a correct answer, the category "pie" will be added to the wheel.</p>
                     <p>Keep playing until the wheel is filled with all the categories!</p>
+                    </div>
                 </section>
-                <section className="difficulty">
+                <section className="game-main p-16 flex space-around">
                     <Wheel />
                     <Category />
-                    <Question />
                 </section>
             </main>
         </>

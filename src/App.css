@@ -7,6 +7,18 @@
 .center {
 	justify-content: center;
 }
+.flex-end {
+	justify-content: flex-end;
+}
+.align-center {
+	align-items: center;
+}
+.space-between {
+	justify-content: space-between;
+}
+.space-around {
+	justify-content: space-around;
+}
 .column {
 	flex-direction: column;
 }
@@ -19,6 +31,85 @@
 .basis-50 {
 	flex-basis: 50%;
 }
+h1 {
+	font-family: "Great Vibes", cursive;
+	font-size: 6rem;
+}
+h2 {
+	font-size: 1.5rem;
+	margin-top: -30px;
+}
+p {
+	line-height: 20px;
+	font-size: 1rem;
+}
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+label {
+	font-family: "PT Serif", serif;
+	color: #ffffff;
+}
+button {
+	font-family: "PT Serif", serif;
+	font-weight: 700;
+}
+#category-dropdown {
+	color: #000000;
+	font-family: "PT Serif", serif;
+	background-color: #daa520;
+}
+
+/* colors  */
+.navy {
+	background-color: #04315b;
+}
+.white-text {
+	color: #ffffff;
+}
+.brown {
+	background-color: #8c4e09;
+}
+.geo-blue {
+	background-color: #05b4e1;
+}
+.pink {
+	background-color: #b91274;
+}
+.orange {
+	background-color: #d93905;
+}
+.yellow {
+	background-color: #fbd60a;
+}
+.green {
+	background-color: #6cac06;
+}
+.gold {
+	color: #daa520;
+}
+
+.card-main {
+	border: 3px solid gold;
+	border-radius: 6px;
+	padding: 60px;
+}
+.card-main h2 {
+	padding: 10px;
+}
+.question-card li.choice {
+	padding: 12px;
+	margin-top: 12px;
+	border: 2px solid gold;
+	border-radius: 30px;
+}
+.question-card button {
+	margin-top: 40px;
+}
 
 #wheel {
 	height: 300px;
@@ -26,4 +117,14 @@
 	/* background-color: gray; */
 	border-radius: 50%;
 	border: 5px solid grey;
+}
+.instructions {
+	margin-top: 24px;
+}
+nav a {
+	color: #ffffff;
+	font-size: 1.2rem;
+}
+nav a:hover {
+	color: #daa520;
 }

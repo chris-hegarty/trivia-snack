@@ -8,14 +8,14 @@ function Menu() {
 
   return (
     <>
-    <nav>
-        <ul>
+    <nav className="navy">
+        <ul className="flex flex-end p-3">
             { !loggedInPlayer && (
                 <>
-                    <li>
+                    <li className="p-2">
                         <NavLink to={"/register"}>Register</NavLink>
                     </li>
-                    <li>
+                          <li className="p-2">
                         <NavLink to={"/login"}>Login</NavLink>
                     </li>
                 </>

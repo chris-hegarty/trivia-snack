@@ -21,7 +21,7 @@ function App() {
 
         <Route path="/register" element={<ProtectedRoute requiresLogin={false} component={<RegisterPage />} />} />
 
-        <Route path="/game" element={<ProtectedRoute requiresLogin={true} component={<GamePage />} />} />
+        <Route path="/game" element={<ProtectedRoute requiresLogin={false} component={<GamePage />} />} />
 
         <Route path="*" element={<Navigate to="/login" />} />
 
