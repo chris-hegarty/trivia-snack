@@ -1,20 +1,24 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import { CategoryContext } from "../context/CategoryContext";
-// import { UrlContext } from "../context/UrlContext";
 import useAxios from "../hooks/useAxios";
 
 
 function Category() {
-const {selected,setSelected} = useContext(CategoryContext)
-//trying to have only one checkbox checked at a time???
-const [url, setUrl] = useState()
-const{ data, error } = useAxios(url)
+const {selected, setSelected} = useContext(CategoryContext)
+const [url, setUrl] = useState(null)
+const{ data:card } = useAxios(url)
+
+    useEffect(() => {
+        if (card) {
+            setSelected(card);
+        }
+    }, [card, setSelected]);
 
   return (
     <section id="category-container flex column">
         <div className="input-container">
             <input
-            value={selected}
+                  value={"geography"}
             onClick={(e)=>{
                 setSelected(e.target.value)
             }}
@@ -28,7 +32,7 @@ const{ data, error } = useAxios(url)
 
         <div className="input-container">
             <input
-            value={selected}
+                  value={"film_and_tv"}
             onClick={(e)=>{
                 setSelected(e.target.value)
 
@@ -43,7 +47,7 @@ const{ data, error } = useAxios(url)
 
         <div className="input-container">
             <input
-            value={selected}
+                  value={"history"}
             onClick={(e)=>{
                 setSelected(e.target.value)
                 
@@ -58,10 +62,9 @@ const{ data, error } = useAxios(url)
 
         <div className="input-container">
             <input
-            value={selected}
+                  value={"arts_and_literature"}
             onClick={(e)=>{
                 setSelected(e.target.value, e.target.checked)
-                console.log(e.target.value);
             }}
             type="checkbox"
             name="categories"
@@ -73,10 +76,10 @@ const{ data, error } = useAxios(url)
 
         <div className="input-container">
             <input
-            value={selected}
+                  value={"science"}
             onClick={(e)=>{
-                setSelected(e.target.value, e.target.checked)
-                console.log(e.target.checked);
+                setSelected(e.target.value)
+                console.log(e.target.value);
             }}
             type="checkbox"
             name="categories"
@@ -88,7 +91,7 @@ const{ data, error } = useAxios(url)
 
         <div className="input-container">
             <input
-            value={selected}
+                  value={"sport_and_leisure"}
             onClick={(e)=>{
                 setSelected(e.target.value)
             }}
@@ -102,6 +105,7 @@ const{ data, error } = useAxios(url)
         <div className="input-container">
             <button onClick={(e)=>{
                 setUrl(`&categories=${selected}`)
+                  console.log(selected);
             }}>
                 GET QUESTION
             </button>
