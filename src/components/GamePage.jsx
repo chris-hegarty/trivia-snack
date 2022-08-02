@@ -18,9 +18,12 @@ function GamePage() {
                     <p>Keep playing until the wheel is filled with all the categories!</p>
                     </div>
                 </section>
+                <section className="category-button flex center align-center">
+                    <Category />
+                </section>
                 <section className="game-main p-16 flex space-around">
                     <Wheel />
-                    <Category />
+                    <Question />
                 </section>
             </main>
         </>

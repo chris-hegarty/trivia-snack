@@ -29,7 +29,7 @@ function useAxios(url) {
               incorrect: val.incorrectAnswers,
               })
             )
-            setData(card)
+            setData(card[0])
 
         } catch (error) {
             setError("No cards available")

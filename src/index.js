@@ -7,6 +7,7 @@ import ErrorBoundary from "./ErrorBoundary";
 import { PlayerProvider } from "./context/PlayerContext";
 import { CategoryProvider } from "./context/CategoryContext";
 import { UrlProvider } from "./context/UrlContext";
+import { CardProvider } from "./context/CardContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +15,9 @@ root.render(
     <PlayerProvider>
       <CategoryProvider>
         <UrlProvider>
-          <App />
+          <CardProvider>
+            <App />
+          </CardProvider>
         </UrlProvider>
       </CategoryProvider>
     </PlayerProvider>

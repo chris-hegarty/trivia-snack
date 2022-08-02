@@ -34,13 +34,13 @@
 h1 {
 	font-family: "Great Vibes", cursive;
 	font-size: 6rem;
+	margin-top: 20px;
 }
 h2 {
 	font-size: 1.5rem;
-	margin-top: -30px;
 }
 p {
-	line-height: 20px;
+	line-height: 32px;
 	font-size: 1rem;
 }
 h2,
@@ -56,7 +56,7 @@ label {
 }
 button {
 	font-family: "PT Serif", serif;
-	font-weight: 700;
+	font-weight: semi-bold;
 }
 #category-dropdown {
 	color: #000000;
@@ -119,7 +119,7 @@ button {
 	border: 5px solid grey;
 }
 .instructions {
-	margin-top: 24px;
+	margin-bottom: 40px;
 }
 nav a {
 	color: #ffffff;
@@ -127,4 +127,15 @@ nav a {
 }
 nav a:hover {
 	color: #daa520;
+}
+nav.navy {
+	border-bottom: 1px solid #daa520;
+}
+.category-button {
+	background-color: #c7c5c5;
+}
+.category-button label {
+	color: #04315b;
+	font-size: 1.3rem;
+	font-weight: semi-bold;
 }
