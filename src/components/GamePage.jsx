@@ -2,6 +2,7 @@ import React from 'react'
 import Wheel  from "./Wheel";
 import Category from "./Category";
 import Question from "./Question";
+import Card from "./Card";
 
 function GamePage() {
 
@@ -24,6 +25,7 @@ function GamePage() {
                 <section className="game-main p-16 flex space-around">
                     <Wheel />
                     <Question />
+                    <Card />
                 </section>
             </main>
         </>

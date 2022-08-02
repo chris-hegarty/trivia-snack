@@ -3,11 +3,12 @@ export const CardContext = createContext(null)
 
 export function CardProvider(props) {
 
-    const[question, setQuestion] = useState(null);
-    const[answers, setAnswers] = useState([]);
-    const[correct, setCorrect] = useState(null);
-    const[incorrect, setIncorrect] = useState(null);
+        const [question, setQuestion] = useState(null);
+        const [answers, setAnswers] = useState([]);
+        const [correct, setCorrect] = useState(null);
+        const [incorrect, setIncorrect] = useState(null);
 
+        
     return <CardContext.Provider value={{ 
         
         question, 
