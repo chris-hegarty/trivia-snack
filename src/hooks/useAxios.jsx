@@ -25,8 +25,12 @@ function useAxios(url) {
               category: val.category,  
               question: val.question,
               id: val.id,
-              correct: val.correctAnswer,
-              incorrect: val.incorrectAnswers,
+              choices: [
+                val.correctAnswer,
+                val.incorrectAnswers[0],
+                val.incorrectAnswers[1],
+                val.incorrectAnswers[2],
+              ],
               })
             )
             setData(card[0])

@@ -40,7 +40,7 @@ h2 {
 	font-size: 1.5rem;
 }
 p {
-	line-height: 32px;
+	line-height: 24px;
 	font-size: 1rem;
 }
 h2,
@@ -55,12 +55,13 @@ label {
 	color: #ffffff;
 }
 button {
-	font-family: "PT Serif", serif;
+	font-family: "Poppins", sans-serif;
 	font-weight: semi-bold;
+	text-transform: uppercase;
 }
 #category-dropdown {
 	color: #000000;
-	font-family: "PT Serif", serif;
+	font-family: "Poppins", serif;
 	background-color: #daa520;
 }
 
@@ -91,6 +92,9 @@ button {
 }
 .gold {
 	color: #daa520;
+}
+.gold-background {
+	background-color: #daa520;
 }
 
 .card-main {
@@ -136,6 +140,10 @@ nav.navy {
 }
 .category-button label {
 	color: #04315b;
-	font-size: 1.3rem;
+	font-size: 1.2rem;
 	font-weight: semi-bold;
+	font-family: "Poppins", sans-serif;
+}
+.form-field {
+	margin: 20px 0;
 }

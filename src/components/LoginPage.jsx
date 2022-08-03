@@ -13,6 +13,10 @@ function LoginPage() {
 
   return (
         <>
+          <main className="navy">
+              <section className="intro flex center align-center column">
+                  <h1 className="gold">Trivia Time</h1>
+                  <h2>A quiz game inspired by Trivial Pursuit.</h2>
           <div className="login-page">
               <div className="form-field">
                   <label htmlFor="user-name">Username</label>
@@ -23,38 +27,48 @@ function LoginPage() {
                       }}
                       type="text"
                       id="user-name"
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
               </div>
-              <div className="form-field">
-                  <label htmlFor="password">Password</label>
-                  <input
-                      value={password}
-                      onChange={(e) => {
-                          setPassword(e.target.value)
-                      }}
-                      type={show === true ? "text" : "password"}
-                      id="password"
-                  />
-                  <span>
-                      <label htmlFor="check-box">Show Password</label>
-                      <input
-                          value={show}
-                          onChange={(e) => { setShow(e.target.checked) }}
-                          type="checkbox"
-                          name="register-checkbox"
-                          id="check-box"
-                      />
-                  </span>
-              </div>
+                      <div className="form-field">
+                          <div className="flex space-between">
+                              <label htmlFor="password">Enter a Password</label>
+                              <span>
+                                  <label htmlFor="check-box">Show Password</label>
+                                  <input
+                                      value={show}
+                                      onChange={(e) => { setShow(e.target.checked) }}
+                                      type="checkbox"
+                                      name="register-checkbox"
+                                      id="check-box"
+                                      className="shadow appearance-none border  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                  />
+                              </span>
+                          </div>
+                          <input
+                              value={password}
+                              onChange={(e) => {
+                                  setPassword(e.target.value)
+                              }}
+                              type={show === true ? "text" : "password"}
+                              id="password"
+                              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                          />
+
+                      </div>
           <button
+                          className="rounded bg-[#daa520] py-1 px-6"
               onClick={(e) => {
                   e.preventDefault()
                       login(username)
                       navigate("/game")
-              }}>
+              }}
+            >
             Submit
           </button>
     </div>
+    </section>
+    </main>
     </>
   )
 }

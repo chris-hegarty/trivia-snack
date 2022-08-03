@@ -1,7 +1,6 @@
 import React, {useContext, useState, useEffect} from 'react'
 import { CategoryContext } from "../context/CategoryContext";
 import {UrlContext} from "../context/UrlContext"
-import Question from "../components/Question"
 import useAxios from "../hooks/useAxios";
 
 
@@ -41,7 +40,7 @@ const{ data:card } = useAxios(url)
        
         <div className="input-container px-4 py-8 flex center">
             <button 
-                className="rounded bg-[#daa520] py-1 px-6"
+                  className="rounded navy py-2 px-6 white-text hover:[#05b4e1]"
                 onClick={(e)=>{
                 e.preventDefault( )
                 setUrl(`&categories=${selected}`)
