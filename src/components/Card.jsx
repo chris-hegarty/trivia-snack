@@ -1,43 +1,54 @@
-import React, { useContext, useEffect, useCallback} from 'react'
-// import { CategoryContext } from "../context/CategoryContext";
-import { UrlContext } from '../context/UrlContext';
-import { CardContext } from '../context/CardContext';
-import useAxios from "../hooks/useAxios";
+import React, { useContext, useEffect, useCallback, useMemo } from "react";
+import { CategoryContext } from "../context/CategoryContext";
+import { CardContext } from "../context/CardContext";
 
 function Card(props) {
-    const { url } = useContext(UrlContext)
-    const { answers, setAnswers } = useContext(CardContext)
-    // const { setSelected } = useContext(CategoryContext)
-    const { data: card } = useAxios(url)
-    console.log(card);
+    const { answers, question } = useContext(CardContext);
 
-    // need to set api data into context.
-        useEffect(() => {
-    if (card) {
-        setAnswers(card);
-    }
-}, [card, setAnswers]);
-console.log(answers.choices);
+    const { selected } = useContext(CategoryContext);
 
-            return (
-            (card &&
-                <>
+    const choices = useMemo(() => {
+        const toShuffle = [...answers];
+        for (let i = toShuffle.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [toShuffle[i], toShuffle[j]] = [toShuffle[j], toShuffle[i]];
+        }
+        return toShuffle;
+    }, [answers]);
+    return (
+        question &&
+        selected &&
+        answers && (
+            <>
                 <section className="show-card">
-                    <h2>{card.question}</h2>
+                    <h2>{question}</h2>
                     <ul>
-                        <li>{card.choices[0]}</li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-
+                        {choices.map((c, idx) => (
+                            <li key={idx}>
+                                <button
+                                    onClick={() => {
+                                        if (c === answers[0]) {
+                                            console.log("Correct!");
+                                        } else {
+                                            console.log("Wrong!");
+                                        }
+                                    }}
+                                    
+                                >
+                                    {c}
+                                </button>
+                            </li>
+                        ))}
                     </ul>
                     <div className="flex center">
-                        <button className="rounded bg-[#daa520] py-1 px-6">Submit Answer</button>
+                        <button className="rounded bg-[#daa520] py-1 px-6">
+                            Submit Answer
+                        </button>
                     </div>
                 </section>
             </>
-            )
         )
-    }
+    );
+}
 
-export default Card
+export default Card;
