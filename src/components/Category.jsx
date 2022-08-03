@@ -8,6 +8,8 @@ function Category() {
 const {selected, setSelected} = useContext(CategoryContext)
 const {url, setUrl} = useContext(UrlContext)
 const{ data:card } = useAxios(url)
+
+//set api data into context:
     useEffect(() => {
         if (card) {
             setSelected(card);
