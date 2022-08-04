@@ -10,14 +10,15 @@ function Category() {
   const { data: card } = useAxios(url);
   const { selected, setSelected } = useContext(CategoryContext);
 
-  //set api data into context:
+  //**** IMPORTANT:
+  // ****Here is where you set your api data into contexts you've set up for card and category. ex: setQuestion turns question into the "question" part from the API url:
   useEffect(() => {
     if (card) {
       setQuestion(card.question);
       setAnswers(card.choices);
       setSelected(card.category);
     }
-  }, [card, setQuestion, setAnswers]);
+  }, [card, setQuestion, setAnswers, setSelected]);
 
   return (
     // <section id="category-container flex">
@@ -28,6 +29,7 @@ function Category() {
           value={selected}
           onChange={(e) => {
             setSelected(e.target.value);
+            console.log(selected);
           }}
           name="categories"
           id="category-dropdown"

@@ -1,7 +1,12 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { PieChart } from 'react-minimal-pie-chart';
+import { CategoryContext } from "../context/CategoryContext";
+import { CardContext } from "../context/CardContext";
 
 function Wheel() {
+  const { selected } = useContext(CategoryContext);
+  const { answer, correct} = useContext(CardContext)
+
 
   const data = 
     [
@@ -12,9 +17,10 @@ function Wheel() {
       { title: 'Five', value: 60, key: 5, color: "#d93905" },
       { title: 'Six', value: 60, key: 6, color: "#b91274" }
     ]
-    
-  return (
 
+    data[0].color = "#ffffff";
+
+  return (
     <div id="wheel">
       <PieChart
         data={data}

@@ -1,12 +1,9 @@
 import React from 'react'
 import Wheel  from "./Wheel";
 import Category from "./Category";
-// import Question from "./Question";
 import Card from "./Card";
-// import useAxios from "../hooks/useAxios"
 
 function GamePage(props) {
-    // const { data: card } = useAxios(url)
 
     return (
         <>
