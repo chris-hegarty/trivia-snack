@@ -9,7 +9,9 @@ function Category() {
   const { url, setUrl } = useContext(UrlContext);
   const { data: card } = useAxios(url);
   const { selected, setSelected } = useContext(CategoryContext);
-  const [color, setColor] = useState("");
+ 
+
+ 
 
   //**** IMPORTANT:
   // ****Here is where you set your api data into contexts you've set up for card and category. ex: setQuestion turns question into the "question" part from the API url:
@@ -21,10 +23,6 @@ function Category() {
     }
   }, [card, setQuestion, setAnswers, setSelected]);
 
-  const colors = {
-
-  }
-
   return (
     // <section id="category-container flex">
     <>
@@ -32,17 +30,22 @@ function Category() {
         <label htmlFor="category-dropdown">Select a Category:</label>
         <select
           value={selected}
-          data-color={color}
           onChange={(e) => {
             setSelected(e.target.value);
-            setColor(option.dataset.color);
-            console.log(e);
+            // setColor(e.target.map((col,idx)=>{
+            //   return e.target[col].getAttribute("data-color")
+            // }) )
+
+            console.log(e.target.datacolor);
+            console.log(e.target.dataset);
+            console.log(e.target[0].getAttribute("data-color"));
+
           }}
           name="categories"
           id="category-dropdown"
           className="px-2 py-1 mx-6 rounded"
         >
-          <option value="default">-Select-</option>
+          <option value="default" data-color="#efefef">-Select-</option>
           <option value="geography" data-color="#05b4e1">Geography</option>
           <option value="film_and_tv" data-color="#b91274">Entertainment</option>
           <option value="history" data-color="#fbd60a">History</option>

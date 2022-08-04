@@ -8,7 +8,7 @@ export function CardProvider(props) {
         const [answers, setAnswers] = useState([]);
         const [correct, setCorrect] = useState();
 
-        console.log(answers[0]);
+        // console.log(answers[0]);
     return <CardContext.Provider value={{    
             question, 
             setQuestion, 
