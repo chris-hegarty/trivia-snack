@@ -3,7 +3,6 @@ export const CategoryContext = createContext(null)
 
 export function CategoryProvider(props) {
     const [selected, setSelected] = useState("default")
-    
 
     //map selected values to color codes.
     //switch case statement?

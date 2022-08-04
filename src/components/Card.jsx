@@ -4,7 +4,7 @@ import { CardContext } from "../context/CardContext";
 
 function Card(props) {
     // ***Here, answers and question were set with the API call in "Categories":
-    const { answers, question, correct, setCorrect } = useContext(CardContext);
+    const { answers, question, setCorrect } = useContext(CardContext);
     const { selected  } = useContext(CategoryContext);
     //***Anytime "answers" array is updated
     // Put the current value in a variable */
@@ -20,7 +20,7 @@ function Card(props) {
     }, [answers]);
     // Now that you have question, selected and answers set, return the div:
         // Map over EACH choice in the new choices array
-        // and output a list item  containing a button
+        // and output a list item  containing a button 
     return (
         question &&
         selected &&

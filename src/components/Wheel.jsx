@@ -1,12 +1,14 @@
-import React,{useContext} from 'react'
+import React, { useContext } from "react";
 import { PieChart } from 'react-minimal-pie-chart';
 import { CategoryContext } from "../context/CategoryContext";
 import { CardContext } from "../context/CardContext";
 
 function Wheel() {
+  
   const { selected } = useContext(CategoryContext);
   const { answer, correct} = useContext(CardContext)
-
+  console.log(answer);
+  console.log(selected);
 
   const data = 
     [
@@ -18,7 +20,12 @@ function Wheel() {
       { title: 'Six', value: 60, key: 6, color: "#b91274" }
     ]
 
-    data[0].color = "#ffffff";
+      //if correct
+      //get the current value of the data array
+      // Array.push - 
+    // data[5].color = "#dfdfdf";
+
+  
 
   return (
     <div id="wheel">
