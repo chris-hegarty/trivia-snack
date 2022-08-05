@@ -18,6 +18,7 @@ function Card(props) {
         }
         return toShuffle;
     }, [answers]);
+    console.log(answers[0]);
     // Now that you have question, selected and answers set, return the div:
         // Map over EACH choice in the new choices array
         // and output a list item  containing a button 
@@ -25,7 +26,6 @@ function Card(props) {
         question &&
         selected &&
         answers && 
-        winList &&
         (
             <>
                 <section className="show-card">

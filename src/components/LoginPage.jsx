@@ -14,10 +14,10 @@ function LoginPage() {
   return (
         <>
           <main className="navy">
-              <section className="intro flex center align-center column">
-                  <h1 className="gold">Trivia Time</h1>
-                  <h2>A quiz game inspired by Trivial Pursuit.</h2>
-          <div className="login-page">
+            <section className="intro flex center align-center column">
+            <h1 className="gold">Trivia Time</h1>
+            <h2>A quiz game inspired by Trivial Pursuit.</h2>
+            <div className="register-page">
               <div className="form-field">
                   <label htmlFor="user-name">Username</label>
                   <input
@@ -40,7 +40,7 @@ function LoginPage() {
                                       onChange={(e) => { setShow(e.target.checked) }}
                                       type="checkbox"
                                       name="register-checkbox"
-                                      id="check-box"
+                                      id="login-check-box"
                                       className="shadow appearance-none border  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                   />
                               </span>

@@ -40,7 +40,7 @@ function RegisterPage() {
                 onChange={(e) => { setShow(e.target.checked) }}
                 type="checkbox"
                 name="register-checkbox"
-                id="check-box"
+                id="register-check-box"
                 className="shadow appearance-none border  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               />
             </span>

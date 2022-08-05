@@ -54,7 +54,6 @@ function Category() {
             e.preventDefault();
             setUrl(`&categories=${selected}`);
             setWinList(selected);
-            console.log(answers[0]);
             console.log(selected);
           }}
         >
