@@ -7,27 +7,26 @@ function Wheel() {
   
   const { selected } = useContext(CategoryContext);
   const { answer, correct} = useContext(CardContext)
-  // console.log(answer);
-  // console.log(selected);
+
   const [color, setColor] = useState("");
 
-  const colorHex = useCallback(()=>{
-      function assignColor(color) {
-        const colorCode = {
-          "geography": "#05b4e1",
-          "film_and_tv": "#b91274",
-          "history": "#fbd60a",
-          "arts_and_literature": "#8c4e09",
-          "science":"#6cac06",
-          "sport_and_leisure": "#b91274"
-        };
-        return color[colorCode] ?? "#efefef"
-      }
-  }, [selected, correct, answer])
+  // const colorHex = useCallback(()=>{
+  //     function assignColor(color) {
+  //       const colorCode = {
+  //         "geography": "#05b4e1",
+  //         "film_and_tv": "#b91274",
+  //         "history": "#fbd60a",
+  //         "arts_and_literature": "#8c4e09",
+  //         "science":"#6cac06",
+  //         "sport_and_leisure": "#b91274"
+  //       };
+  //       return color[colorCode] ?? "#efefef"
+  //     }
+  // }, [selected, correct, answer])
 
-  setColor(colorHex)
 
-  console.log(color);
+
+
 
   const data = 
     [
