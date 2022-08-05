@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react'
+import React, { useState, createContext, useMemo } from 'react'
 
 export const CardContext = createContext(null)
 
@@ -10,29 +10,22 @@ export function CardProvider(props) {
         const[correctAnswer, setCorrectAnswer] = useState();
         const[winList, setWinList] = useState([]);
 
-        console.log(correctAnswer)
 
-        const correctPicks = useMemo(
-            setWinList(
-                {
-                    geography: false,
-                    film_and_tv: false,
-                    history: false,
-                    arts_and_literature: true,
-                    science: false,
-                    sport_and_leisure: false
-
-                }
-            ), []
+        const list = useMemo(()=>{
+            setWinList(  
+            {
+                geography: false,
+                film_and_tv: false,
+                history: false,
+                arts_and_literature: false,
+                science: false,
+                sport_and_leisure: false
+            }
+            )
+        },[setWinList]
         )
-
-
+    // console.log(winList.geography);
         // setWinList( (curr) => [...curr, correctAnswer])
-
-
-
-        console.log(winList);
-
 
     return <CardContext.Provider value={{    
             question, 
@@ -43,7 +36,9 @@ export function CardProvider(props) {
             setCorrect,
             correctAnswer,
             setCorrectAnswer,
-            addToWinsList
+            winList,
+            setWinList,
+
         }}>
 
         {props.children}

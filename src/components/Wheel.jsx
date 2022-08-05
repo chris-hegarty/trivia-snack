@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useCallback } from "react";
+import React, { useContext, useState, useEffect, useCallback, useMemo } from "react";
 import { PieChart } from 'react-minimal-pie-chart';
 import { CategoryContext } from "../context/CategoryContext";
 import { CardContext } from "../context/CardContext";
@@ -6,11 +6,27 @@ import { CardContext } from "../context/CardContext";
 function Wheel() {
   
   const { selected } = useContext(CategoryContext);
-  const { answer, correct} = useContext(CardContext)
+  const { answer, correct, winList, setWinList} = useContext(CardContext)
 
   const [color, setColor] = useState("");
 
-  // const colorHex = useCallback(()=>{
+
+
+  const data = useMemo(()=>
+    [
+      { title: 'geography', value: 60, key: 1, color: winList.geography ? "#05b4e1" : "#efefef" },
+      { title: 'film_and_tv', value: 60, key: 2, color: winList.film_and_tv ? "#b91274" : "#efefef" },
+      { title: 'history', value: 60, key: 3, color: winList.history ? "#fbd60a" : "#efefef" },
+      { title: 'arts_and_literature', value: 60, key: 4, color: winList.arts_and_literature ? "#8c4e09" : "#efefef" },
+      { title: 'science', value: 60, key: 5, color: winList.science ? "#6cac06" : "#efefef" },
+      { title: 'sport_and_leisure', value: 60, key: 6, color: winList.sport_and_leisure ? "#b91274" : "#efefef" }
+    ], [winList] )
+  
+
+      //if correct
+    // data[5].color = "#dfdfdf";
+
+      // const colorHex = useCallback(()=>{
   //     function assignColor(color) {
   //       const colorCode = {
   //         "geography": "#05b4e1",
@@ -23,23 +39,6 @@ function Wheel() {
   //       return color[colorCode] ?? "#efefef"
   //     }
   // }, [selected, correct, answer])
-
-
-
-
-
-  const data = 
-    [
-      { title: 'geography', value: 60, key: 1, color:"#efefef" },
-      { title: 'film_and_tv', value: 60, key: 2, color: "#efefef" },
-      { title: 'history', value: 60, key: 3, color: "#efefef" },
-      { title: 'arts_and_literature', value: 60, key: 4, color: "#efefef" },
-      { title: 'science', value: 60, key: 5, color: "#efefef" },
-      { title: 'sport_and_leisure', value: 60, key: 6, color: "#efefef" }
-    ]
-
-      //if correct
-    // data[5].color = "#dfdfdf";
 
   
 

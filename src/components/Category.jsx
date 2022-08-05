@@ -5,7 +5,7 @@ import { UrlContext } from "../context/UrlContext";
 import useAxios from "../hooks/useAxios";
 
 function Category() {
-  const { setQuestion, setAnswers } = useContext(CardContext);
+  const { setQuestion, setAnswers, setWinList, answers } = useContext(CardContext);
   const { url, setUrl } = useContext(UrlContext);
   const { data: card } = useAxios(url);
   const { selected, setSelected } = useContext(CategoryContext);
@@ -32,14 +32,6 @@ function Category() {
           value={selected}
           onChange={(e) => {
             setSelected(e.target.value);
-            // setColor(e.target.map((col,idx)=>{
-            //   return e.target[col].getAttribute("data-color")
-            // }) )
-
-            console.log(e.target.datacolor);
-            console.log(e.target.dataset);
-            console.log(e.target[0].getAttribute("data-color"));
-
           }}
           name="categories"
           id="category-dropdown"
@@ -61,6 +53,9 @@ function Category() {
           onClick={(e) => {
             e.preventDefault();
             setUrl(`&categories=${selected}`);
+            setWinList(selected);
+            console.log(answers[0]);
+            console.log(selected);
           }}
         >
           Get Question
