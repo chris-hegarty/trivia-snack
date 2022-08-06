@@ -3,14 +3,12 @@ import { PieChart } from 'react-minimal-pie-chart';
 import { CategoryContext } from "../context/CategoryContext";
 import { CardContext } from "../context/CardContext";
 
-function Wheel() {
+function Wheel(props) {
   
   const { selected } = useContext(CategoryContext);
   const { answer, correct, winList, setWinList} = useContext(CardContext)
 
   const [color, setColor] = useState("");
-
-
 
   const data = useMemo(()=>
     [
@@ -21,27 +19,11 @@ function Wheel() {
       { title: 'science', value: 60, key: 5, color: winList.science ? "#6cac06" : "#efefef" },
       { title: 'sport_and_leisure', value: 60, key: 6, color: winList.sport_and_leisure ? "#b91274" : "#efefef" }
     ], [winList] )
+
+    // (selected)=>{
+
+    // }
   
-
-      //if correct
-    // data[5].color = "#dfdfdf";
-
-      // const colorHex = useCallback(()=>{
-  //     function assignColor(color) {
-  //       const colorCode = {
-  //         "geography": "#05b4e1",
-  //         "film_and_tv": "#b91274",
-  //         "history": "#fbd60a",
-  //         "arts_and_literature": "#8c4e09",
-  //         "science":"#6cac06",
-  //         "sport_and_leisure": "#b91274"
-  //       };
-  //       return color[colorCode] ?? "#efefef"
-  //     }
-  // }, [selected, correct, answer])
-
-  
-
   return (
     <div id="wheel">
       <PieChart

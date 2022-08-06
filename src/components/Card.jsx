@@ -4,7 +4,7 @@ import { CardContext } from "../context/CardContext";
 
 function Card(props) {
     // ***Here, answers and question were set with the API call in "Categories":
-    const { answers, question, setCorrect, setCorrectAnswer, setWinList, winList } = useContext(CardContext);
+    const { answers, question, add, setCorrect, setCorrectAnswer, setWinList, winList } = useContext(CardContext);
     const { selected  } = useContext(CategoryContext);
     //***Anytime "answers" array is updated
     // Put the current value in a variable */
@@ -39,10 +39,11 @@ function Card(props) {
                                             // setWinList(selected) 
                                             // console.log(winList);                                         
                                             console.log("Correct!");
-                                            console.log(selected);
+                                           
                                             setCorrect(true)
                                             setCorrectAnswer(answers[0])
-                                            
+                                            add(selected)
+                                        
                                         } else {
                                             console.log("Wrong!");
                                         }

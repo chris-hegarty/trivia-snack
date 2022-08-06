@@ -19,7 +19,7 @@ function Category() {
     if (card) {
       setQuestion(card.question);
       setAnswers(card.choices);
-      setSelected(card.category);
+      // setSelected(card.category);
     }
   }, [card, setQuestion, setAnswers, setSelected]);
 
@@ -53,7 +53,7 @@ function Category() {
           onClick={(e) => {
             e.preventDefault();
             setUrl(`&categories=${selected}`);
-            setWinList(selected);
+            // setWinList(selected);
             console.log(selected);
           }}
         >
