@@ -27,6 +27,8 @@ export function CardProvider(props) {
         })
     }
 
+    console.log(winList);
+
     return <CardContext.Provider value={{    
             question, 
             setQuestion, 

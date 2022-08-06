@@ -42,7 +42,7 @@ function Card(props) {
                                            
                                             setCorrect(true)
                                             setCorrectAnswer(answers[0])
-                                            add()
+                                            add(selected)
                                             console.log(winList);
                                         
                                         } else {
