@@ -1,5 +1,4 @@
-import React, { useState, createContext, useContext, useCallback} from 'react'
-import { CategoryContext } from "../context/CategoryContext";
+import React, { useState, createContext} from 'react'
 
 export const CardContext = createContext(null)
 
@@ -7,9 +6,8 @@ export function CardProvider(props) {
 
         const [question, setQuestion] = useState(null);
         const [answers, setAnswers] = useState([]);
-        const [correct, setCorrect] = useState();
-        const[correctAnswer, setCorrectAnswer] = useState();
-        const {selected, setSelected } = useContext(CategoryContext);
+        // const [correct, setCorrect] = useState();
+        // const[correctAnswer, setCorrectAnswer] = useState();
         const[winList, setWinList] = useState({
             geography: false,
             film_and_tv: false,
@@ -19,7 +17,7 @@ export function CardProvider(props) {
             sport_and_leisure: false
         });
     
-        function add(selected) {
+        function addPieToWheel(selected) {
         setWinList((curr)=>{
             let updated = { ...curr };
             updated[selected] = true;
@@ -27,20 +25,18 @@ export function CardProvider(props) {
         })
     }
 
-    console.log(winList);
-
     return <CardContext.Provider value={{    
             question, 
             setQuestion, 
             answers, 
             setAnswers,
-            correct,
-            setCorrect,
-            correctAnswer,
-            setCorrectAnswer,
+            // correct,
+            // setCorrect,
+            // correctAnswer,
+            // setCorrectAnswer,
             winList,
             setWinList,
-            add
+            addPieToWheel
         }}>
 
         {props.children}

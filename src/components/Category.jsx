@@ -1,18 +1,15 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { CardContext } from "../context/CardContext";
 import { CategoryContext } from "../context/CategoryContext";
 import { UrlContext } from "../context/UrlContext";
 import useAxios from "../hooks/useAxios";
 
 function Category() {
-  const { setQuestion, setAnswers, setWinList, answers } = useContext(CardContext);
+  const { setQuestion, setAnswers} = useContext(CardContext);
   const { url, setUrl } = useContext(UrlContext);
   const { data: card } = useAxios(url);
   const { selected, setSelected } = useContext(CategoryContext);
  
-
- 
-
   //**** IMPORTANT:
   // ****Here is where you set your api data into contexts you've set up for card and category. ex: setQuestion turns question into the "question" part from the API url:
   useEffect(() => {
