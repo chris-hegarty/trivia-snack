@@ -31,6 +31,9 @@
 .basis-50 {
 	flex-basis: 50%;
 }
+.basis-66 {
+	flex-basis: calc(((100% / 3) * 2) - 40px);
+}
 h1 {
 	font-family: "Great Vibes", cursive;
 	font-size: 6rem;
@@ -63,6 +66,9 @@ button {
 	color: #000000;
 	font-family: "Poppins", serif;
 	background-color: #daa520;
+}
+#category-dropdown:hover {
+	background-color: #e8cb84;
 }
 
 /* colors  */
@@ -97,7 +103,7 @@ button {
 	background-color: #daa520;
 }
 
-.card-main {
+/* .card-main {
 	border: 3px solid gold;
 	border-radius: 6px;
 	padding: 60px;
@@ -113,17 +119,17 @@ button {
 }
 .question-card button {
 	margin-top: 40px;
-}
+} */
 
 #wheel {
 	height: 300px;
 	width: 300px;
 	/* background-color: gray; */
 	border-radius: 50%;
-	border: 5px solid grey;
+	border: 5px solid #daa520;
 }
 .instructions {
-	margin-bottom: 40px;
+	margin: 40px 0;
 }
 nav a {
 	color: #ffffff;
@@ -132,18 +138,32 @@ nav a {
 nav a:hover {
 	color: #daa520;
 }
-nav.navy {
+nav {
 	border-bottom: 1px solid #daa520;
 }
 .category-button {
-	background-color: #c7c5c5;
+	background: radial-gradient(#393636, #b7b6b6), url("/src/images/tr-board.jpg");
+	background-position: center center;
+	background-size: cover;
+	background-blend-mode: luminosity;
 }
 .category-button label {
-	color: #04315b;
-	font-size: 1.2rem;
+	color: #ffffff;
+	font-size: 1.3rem;
 	font-weight: semi-bold;
 	font-family: "Poppins", sans-serif;
 }
 .form-field {
 	margin: 20px 0;
+}
+.trivia-subhead {
+	margin-top: -35px;
+}
+
+//card styling
+
+.game-main section#game-card.show-card {
+	padding: 60px;
+	/* background-image: url("/src/images/game-board.jpeg");
+	background-blend-mode: darken; */
 }

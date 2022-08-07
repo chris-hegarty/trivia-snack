@@ -8,22 +8,24 @@ function Wheel(props) {
 
   const data = useMemo(()=>
     [
-      { title: 'geography', value: 60, key: 1, color: winList.geography ? "#05b4e1" : "#efefef" },
-      { title: 'film_and_tv', value: 60, key: 2, color: winList.film_and_tv ? "#b91274" : "#efefef" },
-      { title: 'history', value: 60, key: 3, color: winList.history ? "#fbd60a" : "#efefef" },
-      { title: 'arts_and_literature', value: 60, key: 4, color: winList.arts_and_literature ? "#8c4e09" : "#efefef" },
-      { title: 'science', value: 60, key: 5, color: winList.science ? "#6cac06" : "#efefef" },
-      { title: 'sport_and_leisure', value: 60, key: 6, color: winList.sport_and_leisure ? "#b91274" : "#efefef" }
+      { title: 'geography', value: 60, key: 1, color: winList.geography ? "#05b4e1" : "#8c8c8c" },
+      { title: 'film_and_tv', value: 60, key: 2, color: winList.film_and_tv ? "#b91274" : "#8c8c8c" },
+      { title: 'history', value: 60, key: 3, color: winList.history ? "#fbd60a" : "#8c8c8c" },
+      { title: 'arts_and_literature', value: 60, key: 4, color: winList.arts_and_literature ? "#8c4e09" : "#8c8c8c" },
+      { title: 'science', value: 60, key: 5, color: winList.science ? "#6cac06" : "#8c8c8c" },
+      { title: 'sport_and_leisure', value: 60, key: 6, color: winList.sport_and_leisure ? "#b91274" : "#8c8c8c" }
     ], [winList] )
   
   return (
-    <div id="wheel">
+    <div className="basis-50 flex center">
+      <div id="wheel">
       <PieChart
         data={data}
         totalValue={360}
         paddingAngle={4}
-        background={"grey"}
+        background={"#daa520"}
       />
+    </div>
     </div>
   )
 }

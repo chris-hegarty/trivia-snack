@@ -8,7 +8,7 @@ function Menu() {
 
   return (
     <>
-    <nav className="navy">
+    <nav>
         <ul className="flex flex-end p-3">
             { !loggedInPlayer && (
                 <>

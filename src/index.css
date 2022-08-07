@@ -16,6 +16,9 @@ body,
 #root {
 	height: 100%;
 }
+#root {
+	background-color: #04315b;
+}
 /* Add Tailwind CSS */
 
 @tailwind base;

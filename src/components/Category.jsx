@@ -26,6 +26,7 @@ function Category() {
       <div>
         <label htmlFor="category-dropdown">Select a Category:</label>
         <select
+          className="hover:bg-amber-800"
           value={selected}
           onChange={(e) => {
             setSelected(e.target.value);
@@ -46,7 +47,7 @@ function Category() {
 
       <div className="input-container px-4 py-8 flex center">
         <button
-          className="rounded navy py-2 px-6 white-text hover:[#05b4e1]"
+          className="rounded navy py-2 px-6 white-text hover:bg-violet-600"
           onClick={(e) => {
             e.preventDefault();
             setUrl(`&categories=${selected}`);

@@ -13,7 +13,7 @@ function RegisterPage() {
 
   return (
 
-    <main className="navy">
+    <main>
       <section className="intro flex center align-center column">
         <h1 className="gold">Trivia Time</h1>
         <h2>A quiz game inspired by Trivial Pursuit.</h2>

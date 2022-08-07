@@ -10,7 +10,7 @@ function GamePage(props) {
             <main className="navy">
                 <section className="intro flex center align-center column">
                     <h1 className="gold">Trivia Time</h1>
-                    <h2>A quiz game inspired by Trivial Pursuit.</h2>
+                    <h2 className="trivia-subhead">A quiz game inspired by Trivial Pursuit.</h2>
                     <br />
                     <div className="flex column align-center instructions">
                     <p>Select a category, and click to generate a question.</p>
