@@ -26,7 +26,6 @@ function Category() {
       <div>
         <label htmlFor="category-dropdown">Select a Category:</label>
         <select
-          className="hover:bg-amber-800"
           value={selected}
           onChange={(e) => {
             setSelected(e.target.value);
