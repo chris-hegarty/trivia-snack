@@ -13,10 +13,14 @@ function Menu() {
             { !loggedInPlayer && (
                 <>
                     <li className="p-2">
-                        <NavLink to={"/register"}>Register</NavLink>
+                        <NavLink 
+                        className=" hover:bg-violet-600"
+                        to={"/register"}>Register</NavLink>
                     </li>
-                          <li className="p-2">
-                        <NavLink to={"/login"}>Login</NavLink>
+                    <li className="p-2">
+                        <NavLink 
+                        className=" hover:bg-violet-600"
+                        to={"/login"}>Login</NavLink>
                     </li>
                 </>
                 )
@@ -28,6 +32,7 @@ function Menu() {
                     </li>
                     <li>
                         <NavLink 
+                                  className="hover:bg-violet-600"
                             onClick={() => {
                                 logout()
                             }}
