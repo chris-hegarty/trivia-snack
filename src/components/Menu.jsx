@@ -6,7 +6,12 @@ function Menu() {
 	const { loggedInPlayer, logout } = useContext(PlayerContext);
 	return (
 		<>
-			<nav>
+			<nav className="flex center space-between align-center">
+				{loggedInPlayer && (
+					<div>
+						<p className="gold nav-logo">Trivia Time</p>
+					</div>
+				)}
 				<ul className="flex flex-end p-3">
 					{!loggedInPlayer && (
 						<>
@@ -24,10 +29,10 @@ function Menu() {
 					)}
 					{loggedInPlayer && (
 						<>
-							<li>
+							<li className="p-2">
 								<NavLink to={"/game"}>Home</NavLink>
 							</li>
-							<li>
+							<li className="p-2">
 								<NavLink
 									className="hover:bg-violet-600"
 									onClick={() => {
