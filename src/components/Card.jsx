@@ -35,7 +35,9 @@ function Card(props) {
 				>
 					<div className="outerCard">
 						<div className="cat-label">
-							<p>{selected}</p>
+							<span className={`text-white rounded p-2 ${selected}`}>
+								{selected}
+							</span>
 						</div>
 						<h2 className="py-6">{question}</h2>
 						<ul>

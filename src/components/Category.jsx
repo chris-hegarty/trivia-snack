@@ -61,11 +61,10 @@ function Category() {
 			<div className="input-container px-4 py-8 flex center">
 				<button
 					disabled={selected === "default"}
-					className="rounded navy py-2 px-6 white-text hover:bg-violet-600"
+					className="disabled:bg-gray-500 rounded navy py-2 px-6 white-text hover:bg-violet-600"
 					onClick={(e) => {
 						e.preventDefault();
 						setUrl(`&categories=${selected}`);
-						// setWinList(selected);
 						console.log(selected);
 					}}
 				>
