@@ -9,7 +9,7 @@ function Menu() {
 			<nav className="flex center space-between align-center">
 				{loggedInPlayer && (
 					<div>
-						<p className="gold nav-logo">Trivia Time</p>
+						<p className="gold nav-logo">Trivia Snack</p>
 					</div>
 				)}
 				<ul className="flex flex-end p-3">

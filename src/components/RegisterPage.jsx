@@ -26,11 +26,11 @@ function RegisterPage() {
 	return (
 		<main>
 			<section className="intro flex center align-center column">
-				<h1 className="gold">Trivia Time</h1>
-				<h2>A quiz game inspired by Trivial Pursuit.</h2>
+				<h1 className="gold">Trivia Snack</h1>
+				<h2>A bite-size quiz game inspired by Trivial Pursuit.</h2>
 				<div className="register-page">
 					<div className="form-field">
-						<label htmlFor="user-name">Enter A Username</label>
+						<label htmlFor="user-name">Enter a Username</label>
 						<input
 							value={username}
 							onChange={(e) => {
@@ -54,7 +54,7 @@ function RegisterPage() {
 									type="checkbox"
 									name="register-checkbox"
 									id="register-check-box"
-									className="shadow appearance-none border  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+									className="shadow appearance-none border ml-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								/>
 							</span>
 						</div>
