@@ -5,7 +5,14 @@ import { UrlContext } from "../context/UrlContext";
 import useAxios from "../hooks/useAxios";
 
 function Category() {
-	const { setQuestion, setAnswers } = useContext(CardContext);
+	const {
+		setQuestion,
+		setAnswers,
+		correct,
+		setCorrect,
+		hasAnswered,
+		setHasAnswered,
+	} = useContext(CardContext);
 	const { url, setUrl } = useContext(UrlContext);
 	const { data: card } = useAxios(url);
 	const { selected, setSelected } = useContext(CategoryContext);
@@ -16,9 +23,9 @@ function Category() {
 		if (card) {
 			setQuestion(card.question);
 			setAnswers(card.choices);
-			// setSelected(card.category);
+			console.log(card.choices[0]);
 		}
-	}, [card, setQuestion, setAnswers, setSelected]);
+	}, [card, setQuestion, setAnswers, setSelected, setCorrect]);
 
 	return (
 		// <section id="category-container flex">
@@ -65,6 +72,7 @@ function Category() {
 					onClick={(e) => {
 						e.preventDefault();
 						setUrl(`&categories=${selected}`);
+						setHasAnswered(false);
 						console.log(selected);
 					}}
 				>

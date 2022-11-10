@@ -5,8 +5,8 @@ export const CardContext = createContext(null);
 export function CardProvider(props) {
 	const [question, setQuestion] = useState(null);
 	const [answers, setAnswers] = useState([]);
-	// const [correct, setCorrect] = useState();
-	// const[correctAnswer, setCorrectAnswer] = useState();
+	const [correct, setCorrect] = useState(false);
+	const [hasAnswered, setHasAnswered] = useState(false);
 	const [winList, setWinList] = useState({
 		geography: false,
 		film_and_tv: false,
@@ -24,6 +24,10 @@ export function CardProvider(props) {
 		});
 	}
 
+	function resetCorrect() {
+		setCorrect(false);
+	}
+
 	return (
 		<CardContext.Provider
 			value={{
@@ -34,6 +38,10 @@ export function CardProvider(props) {
 				winList,
 				setWinList,
 				addPieToWheel,
+				correct,
+				setCorrect,
+				hasAnswered,
+				setHasAnswered,
 			}}
 		>
 			{props.children}

@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
-import React, { useContext, useMemo } from "react";
+import React, { useContext, useMemo, useState } from "react";
 import { CategoryContext } from "../context/CategoryContext";
 import { CardContext } from "../context/CardContext";
 
@@ -7,6 +7,8 @@ function Card(props) {
 	// ***Here, answers and question were set with the API call in "Categories":
 	const { answers, question, addPieToWheel } = useContext(CardContext);
 	const { selected } = useContext(CategoryContext);
+	const { correct, setCorrect, hasAnswered, setHasAnswered } =
+		useContext(CardContext);
 
 	//***Anytime "answers" array is updated
 	// **Use [...answers] to put each element in a variable called toShuffle */
@@ -57,8 +59,12 @@ function Card(props) {
 										onClick={() => {
 											if (c === answers[0]) {
 												console.log("Correct!");
+												setHasAnswered(true);
 												addPieToWheel(selected);
+												setCorrect(true);
 											} else {
+												setHasAnswered(true);
+												setCorrect(false);
 												console.log("Wrong!");
 											}
 										}}
@@ -68,7 +74,12 @@ function Card(props) {
 								</li>
 							))}
 						</ul>
-						<div className="flex center"></div>
+						<div className="flex center">
+							{hasAnswered && correct && <p>Correct!</p>}
+							{hasAnswered && !correct && (
+								<p>Incorrect. Try another category!</p>
+							)}
+						</div>
 					</div>
 				</section>
 			</>
