@@ -36,6 +36,7 @@ function Category() {
 					value={selected}
 					onChange={(e) => {
 						setSelected(e.target.value);
+						setHasAnswered(false);
 					}}
 					name="categories"
 					id="category-dropdown"
@@ -67,7 +68,7 @@ function Category() {
 
 			<div className="input-container px-4 py-8 flex center">
 				<button
-					disabled={selected === "default"}
+					disabled={selected === "default" || hasAnswered === true}
 					className="disabled:bg-gray-500 rounded navy py-2 px-6 white-text hover:bg-violet-600"
 					onClick={(e) => {
 						e.preventDefault();
