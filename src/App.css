@@ -193,7 +193,7 @@ nav {
 	}
 	#category-dropdown {
 		flex-basis: 100%;
-		padding: 0.8rem 0;
+		padding: 0.8rem 1rem;
 		font-size: 1.2rem;
 	}
 	.input-container {
