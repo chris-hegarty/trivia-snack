@@ -13,9 +13,6 @@
 .flex-end {
 	justify-content: flex-end;
 }
-.align-center {
-	align-items: center;
-}
 .space-between {
 	justify-content: space-between;
 }
@@ -136,7 +133,7 @@ button {
 	border: 5px solid #daa520;
 }
 .instructions {
-	margin: 40px 0;
+	margin: 40px 10px;
 }
 nav a {
 	color: #ffffff;
@@ -173,4 +170,38 @@ nav {
 	padding: 60px;
 	/* background-image: url("/src/images/game-board.jpeg");
 	background-blend-mode: darken; */
+}
+
+@media screen and (max-width: 479px) {
+	.instructions {
+		align-items: flex-start;
+	}
+	.category-button {
+		padding: 40px 0;
+		gap: 30px;
+	}
+	.wheel {
+		order: 2;
+	}
+	section.game-main section#game-card.show-card {
+		padding: 10px;
+		flex-basis: initial;
+	}
+	.outerCard li {
+		margin: 1rem 0;
+		padding: 1rem 0;
+	}
+	#category-dropdown {
+		flex-basis: 100%;
+		padding: 0.8rem 0;
+		font-size: 1.2rem;
+	}
+	.input-container {
+		padding: 0;
+		flex-basis: 100%;
+	}
+	.input-container button {
+		flex-basis: 90%;
+		padding: 1rem 0;
+	}
 }

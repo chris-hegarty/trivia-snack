@@ -22,10 +22,10 @@ function GamePage(props) {
 						</p>
 					</div>
 				</section>
-				<section className="category-button flex center align-center">
+				<section className="category-button flex center align-center flex-wrap">
 					<Category />
 				</section>
-				<section className="game-main p-8 flex space-around align-center">
+				<section className="game-main p-8 flex space-around align-center flex-wrap">
 					<Wheel />
 					<Card />
 				</section>

@@ -48,7 +48,7 @@ function Wheel(props) {
 	);
 
 	return (
-		<div className="basis-50 flex center">
+		<div className="basis-50 flex center wheel">
 			<div id="wheel">
 				<PieChart
 					data={data}
